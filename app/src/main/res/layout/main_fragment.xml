@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/supply_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supply"
+        android:padding="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/food_level_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Level: "
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"/>
+
+        <ProgressBar
+            android:id="@+id/food_level_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:visibility="visible"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/food_level_text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/water_level_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water Level: "
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"/>
+
+        <ProgressBar
+            android:id="@+id/water_level_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:visibility="visible"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/water_level_text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/stats_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stats"
+        android:padding="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"/>
+
+
+</LinearLayout>
