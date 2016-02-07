@@ -25,10 +25,8 @@ import butterknife.ButterKnife;
  */
 public class MainFragment extends SlimFragment {
 
-    @Bind(R.id.food_level_progress)
     ProgressBar foodLevelProgress;
 
-    @Bind(R.id.water_level_progress)
     ProgressBar waterLevelProgress;
 
     @Callback
@@ -37,10 +35,8 @@ public class MainFragment extends SlimFragment {
     @Bind(R.id.last_fed_date)
     TextView lastFedTextView;
 
-    @Bind(R.id.food_level_percentage)
     TextView mFoodLevelPercentage;
 
-    @Bind(R.id.water_level_percentage)
     TextView mWaterLevelPercentage;
 
     private static Integer BASE_FOOD_AMOUNT = 45;
@@ -68,6 +64,11 @@ public class MainFragment extends SlimFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        foodLevelProgress = (ProgressBar) view.findViewById(R.id.food_level_progress);
+        waterLevelProgress = (ProgressBar) view.findViewById(R.id.water_level_progress);
+        mFoodLevelPercentage = (TextView) view.findViewById(R.id.food_level_percentage);
+        mWaterLevelPercentage = (TextView) view.findViewById(R.id.water_level_percentage);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -76,8 +77,6 @@ public class MainFragment extends SlimFragment {
                 new SecondProgressUpdate().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, BASE_WATER_AMOUNT);
             }
         }, 500);
-
-
     }
 
     @Override

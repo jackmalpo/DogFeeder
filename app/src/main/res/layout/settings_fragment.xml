@@ -15,9 +15,10 @@
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:textSize="18sp"
-            android:text="Setting"/>
+            android:text="Ding on Feed"/>
 
         <Switch
+            android:id="@+id/ding_on_feed_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -35,13 +36,71 @@
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:textSize="18sp"
-            android:text="Setting"/>
+            android:text="Auto Refill Water"/>
 
         <Switch
+            android:id="@+id/auto_refill_water_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="18sp"
+            android:text="Food Quantity"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+            <EditText
+                android:id="@+id/food_quantity"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:imeOptions="actionDone"
+                android:text="200"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="grams"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="18sp"
+            android:text="Post to Facebook"/>
+
+        <Switch
+            android:id="@+id/post_to_facebook_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
 
 </LinearLayout>

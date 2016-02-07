@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity
     @Bind(R.id.fab)
     FloatingActionButton fab;
 
+    NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +60,14 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         mToolbarLayout.setTitle("");
 
-        replaceFragment(new MainFragment(), HOME_TAG);
+        replaceFragment(new MainFragment(), HOME_TAG, R.id.nav_home);
 
-        onNavigationItemSelected(navigationView.getMenu().getItem(0));
+//        onNavigationItemSelected(navigationView.getMenu().getItem(0));
 
     }
 
@@ -94,11 +96,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void feedDog(){
+        MainFragment fragment;
         if(getSupportFragmentManager().findFragmentByTag(HOME_TAG) != null) {
-            MainFragment fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(HOME_TAG);
+            fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(HOME_TAG);
             if(fragment != null) {
                 fragment.feedDog();
             }
+        } else {
+            fragment = new MainFragment();
+            replaceFragment(fragment, HOME_TAG, R.id.nav_home);
+            fragment.feedDog();
         }
     }
 
@@ -108,7 +115,7 @@ public class MainActivity extends AppCompatActivity
                 .setAction("Ok", null).show();
     }
 
-    private void replaceFragment(Fragment fragment, @Nullable String tag){
+    private void replaceFragment(Fragment fragment, @Nullable String tag, int menuId){
         //TODO use tags to see if fragment is already there before making a new one.
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if(tag == null)
@@ -116,6 +123,7 @@ public class MainActivity extends AppCompatActivity
         else
             ft.replace(R.id.frame, fragment, tag);
         ft.commit();
+        navigationView.setCheckedItem(menuId);
     }
 
 
@@ -125,10 +133,12 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_schedule) {
+        if (id == R.id.nav_home) {
+            replaceFragment(new MainFragment(), HOME_TAG, id);
+        }else if (id == R.id.nav_schedule) {
 
-        } else if (id == R.id.nav_settings) {
-            replaceFragment(new SettingsFragment(), null);
+        }else if (id == R.id.nav_settings) {
+            replaceFragment(new SettingsFragment(), null, id);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_share) {

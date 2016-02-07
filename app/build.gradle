@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'

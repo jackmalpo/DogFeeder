@@ -5,4 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="ding_switch_enabled">ding_switch_enabled</string>
+    <string name="auto_refill_switch_enabled">auto_refill_switch_enabled</string>
+    <string name="food_quantity_amount">food_quantity_amount</string>
+    <string name="facebook_switch_enabled">facebook_switch_enabled</string>
 </resources>
