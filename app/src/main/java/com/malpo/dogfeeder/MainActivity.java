@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             replaceFragment(new MainFragment(), HOME_TAG, id);
         }else if (id == R.id.nav_schedule) {
-
+            replaceFragment(new ScheduleFragment(), null, id);
         }else if (id == R.id.nav_settings) {
             replaceFragment(new SettingsFragment(), null, id);
         } else if (id == R.id.nav_gallery) {
