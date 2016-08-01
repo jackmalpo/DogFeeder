@@ -1,25 +1,24 @@
 package com.malpo.dogfeeder;
 
+import com.metova.slim.Slim;
+
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-
-import com.metova.slim.Slim;
+import android.view.View;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -68,6 +67,8 @@ public class MainActivity extends AppCompatActivity
         replaceFragment(new MainFragment(), HOME_TAG, R.id.nav_home);
 
 //        onNavigationItemSelected(navigationView.getMenu().getItem(0));
+
+        //testing rebase shtuffs
 
     }
 
