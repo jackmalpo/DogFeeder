@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity
     @OnClick(R.id.fab)
     public void onClick(View view){
         showDialog();
+        //Added this on rebase
     }
 
     private void showDialog(){
